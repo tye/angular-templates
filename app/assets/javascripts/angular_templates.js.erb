@@ -1,0 +1,12 @@
+angular.module("app").run(["$templateCache", function($templateCache) {
+  <% AngularTemplates::TemplatingController.render_templates.each do |k,v| %>
+    $templateCache.put(<%= k.to_json %>, <%= v.to_json %>)
+  <% end %>
+}]);
+<%
+depend_on Rails.root.join('app','templates')
+files = Dir[Rails.root.join('app','templates','*','**')]
+files.each do |file|
+  depend_on file
+end
+%>
