@@ -63,5 +63,6 @@ Partials will not be added to `$templateCache`.
 
 ## Todo
 
-- Be able to customize the module name the templates are added to
+- Fix problems where file doesn't always update after a new file is
+  created
 - Add test code
