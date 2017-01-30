@@ -8,7 +8,7 @@ module AngularTemplates
     end
     include ActionController::Helpers
 
-    self.view_paths = 'app/templates'
+    self.view_paths = 'app/assets/javascripts/templates'
     self.helpers_path = Rails.application.helpers_paths
 
     helper :all
@@ -17,8 +17,8 @@ module AngularTemplates
       def self.render_templates
         controller = TemplatingController.new
         result = {}
-        prefix = Rails.root.join('app','templates').to_s
-        files = Dir[Rails.root.join('app','templates','*','**','**')]
+        prefix = Rails.root.join('app','assets','javascripts','templates').to_s
+        files = Dir[Rails.root.join('app','assets','javascripts','templates','*','**','**')]
         files.reject!{|f| File.basename(f)[0] == '_'}
         files.each do |file|
           if m = file.match(/#{prefix}\/(.+?)\./)

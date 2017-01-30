@@ -4,8 +4,8 @@ angular.module("<%= Rails.application.config.angular_templates.module_name %>").
   <% end %>
 }]);
 <%
-depend_on Rails.root.join('app','templates')
-files = Dir[Rails.root.join('app','templates','*','**')]
+depend_on Rails.root.join('app','assets','javascripts','templates')
+files = Dir[Rails.root.join('app','assets','javascripts','templates','*','**')]
 files.each do |file|
   depend_on file
 end
