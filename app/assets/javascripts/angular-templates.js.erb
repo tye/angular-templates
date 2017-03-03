@@ -1,4 +1,4 @@
-angular.module("<%= Rails.application.config.angular_templates.module_name %>").run(["$templateCache", function($templateCache) {
+angular.module("<%= Rails.application.config.angular_templates.module_name %>", []).run(["$templateCache", function($templateCache) {
   <% AngularTemplates::TemplatingController.render_templates.each do |k,v| %>
     $templateCache.put(<%= k.to_json %>, <%= v.to_json %>)
   <% end %>
